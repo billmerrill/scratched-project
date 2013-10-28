@@ -1,0 +1,79 @@
+* { padding: 0px; margin: 0px; border: 0px; }
+
+body { padding: 8px; }
+
+
+/* list page */
+ul {
+    list-style-type: none;
+}
+
+li {
+    line-height: 36px;
+}
+
+#list_page button {
+    height: 44px;
+    width: 300px;
+    font-size: 24px;
+    background-color: #ccc;
+    font-weight: bold;
+    color: white;
+}
+
+
+/* input page */
+
+#input_page {
+    height: 640px;
+    width: 100%;
+    overflow: auto;
+    display:none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: #999;
+    padding: 0px;
+    margin: 0px;
+    border: 1px red;
+ }
+
+#inputs {
+    background-color: white;
+    width: 300px;
+    margin: 0 auto;
+}
+
+#inputs button {
+    background-color: #ccc;
+    font-weight: bold;
+    color: white;
+}
+
+#cancel_button {
+    width: 75px;
+    height: 44px;
+    font-size: 14px;
+    margin-bottom: 10px;
+    padding-left: 0px;
+    color: #eee;
+}
+
+#new_item_text {
+    height: 44px;
+    width: 250px;
+    padding: 10px;
+    font-size: 24px;
+    background: #fff;
+}
+
+#save_button {
+    height: 44px;
+    width: 300px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+
+
+
