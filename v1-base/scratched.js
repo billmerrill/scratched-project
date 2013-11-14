@@ -71,10 +71,12 @@ var scratched = (function () {
             return false;
         },
 
-        swipe_item_left = function () {
+        swipe_item_left = function (vent) {
+            vent.target.style.textDecoration = "none";
             console.log("[SCRATCHED] WE Swipe <~~~~~~~~~~~~");
         },
-        swipe_item_right = function () {
+        swipe_item_right = function (vent) {
+            vent.target.style.textDecoration = "line-through";
             console.log("[SCRATCHED] WE Swipe ~~~~~~~~~~~~>");
         };
 
