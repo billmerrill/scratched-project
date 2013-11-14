@@ -1,6 +1,7 @@
 * { padding: 0px; margin: 0px; border: 0px; }
 
-body { padding: 8px; }
+body { padding: 8px;
+       font-family: "Helvetica Neue", Arial, Helvetica, sans-serif }
 
 
 /* list page */
@@ -9,6 +10,7 @@ ul {
 }
 
 li {
+    font-size: 20px;
     line-height: 36px;
 }
 
@@ -21,6 +23,9 @@ li {
     color: white;
 }
 
+#plus {
+    margin-bottom: 10px;
+}
 
 /* input page */
 

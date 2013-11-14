@@ -73,11 +73,13 @@ var scratched = (function () {
 
         swipe_item_left = function (vent) {
             vent.target.style.textDecoration = "none";
-            console.log("[SCRATCHED] WE Swipe <~~~~~~~~~~~~");
+            vent.target.style.fontStyle = "normal";
+            vent.target.style.color = "#000";
         },
         swipe_item_right = function (vent) {
             vent.target.style.textDecoration = "line-through";
-            console.log("[SCRATCHED] WE Swipe ~~~~~~~~~~~~>");
+            vent.target.style.fontStyle = "italic";
+            vent.target.style.color = "#888";
         };
 
     return {
