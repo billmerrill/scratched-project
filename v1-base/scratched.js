@@ -61,6 +61,7 @@ var scratched = (function () {
         },
 
         select_item = function (e) {
+            e.preventDefault();
             current_item = e.target;
             show_input_page();
         },
@@ -99,7 +100,7 @@ var scratched = (function () {
             document.getElementById("cancel_button").addEventListener("click", cancel_input);
             delete_button.addEventListener("click", delete_item);
             the_list.addEventListener("click", select_item);
-            touched.swipe_watch(the_list, swipe_item_left, swipe_item_right);
+            touched.add_swipe_listener(the_list, swipe_item_left, swipe_item_right);
         }
     };
 }());

@@ -3,6 +3,7 @@
 var touched = (function () {
     "use strict";
 
+    var MIN_SWIPE_LENGTH = 50;
     var swipers, touching,
 
         start_swipe_watch = function (vent) {
@@ -21,14 +22,14 @@ var touched = (function () {
         },
 
         end_swipe_watch = function (vent) {
-            var diff, threshold = 50, swipe_left = true;
+            var horizontal_diff, swipe_left = true;
             if (touching !== null) {
-                diff = touching['start_x'] - vent.changedTouches[0].clientX;
-                if (diff > 0) {
+                horizontal_diff = touching['start_x'] - vent.changedTouches[0].clientX;
+                if (horizontal_diff > 0) {
                     swipe_left = false;
                 }
-                console.log("difference was " + diff);
-                if (Math.abs(diff) > threshold) {
+                console.log("horizontal_difference was " + horizontal_diff);
+                if (Math.abs(horizontal_diff) > MIN_SWIPE_LENGTH) {
                     if (swipe_left) {
                         console.log("[TOUCHED]         Swipe left");
                         swipers[touching['swiper']]['left_callback'](vent);
@@ -72,7 +73,7 @@ var touched = (function () {
             console.log("[TOUCHED]    LEAVE touch");
         },
 
-        swipe_watch: function (swipe_element, right_callback, left_callback) {
+        add_swipe_listener: function (swipe_element, right_callback, left_callback) {
             console.log("[TOUCHED] Starting monitoring of " + swipe_element.id);
             swipe_element.addEventListener("touchstart", this.touch_start);
             swipe_element.addEventListener("touchend", this.touch_end);
