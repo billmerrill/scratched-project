@@ -81,10 +81,23 @@ var scratched = (function () {
             vent.target.style.textDecoration = "line-through";
             vent.target.style.fontStyle = "italic";
             vent.target.style.color = "#888";
+        },
+        is_able = function() {
+            try {
+                return 'localStorage' in window && window['localStorage'] !== null;
+            } catch (e) {
+                return false;
+            }
         };
 
     return {
         init: function () {
+            // required
+            if (!is_able()) {
+                alert("Web Storage is required.");
+            }
+
+            stored.init();
             touched.init();
 
             // elements
