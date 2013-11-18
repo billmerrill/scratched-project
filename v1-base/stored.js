@@ -51,8 +51,18 @@ var stored = (function () {
             store.setItem(key_base + "s", status);
         };
 
-
     return {
+        init: function () {
+            if (store.getItem("pc") === null) {
+                store.clear();
+                store.setItem("pc", "1");
+                store.setItem("p0c", "0");
+
+                this.add_item(0, "Apples");
+                this.add_item(0, "Bananas");
+                this.add_item(0, "More Items!");
+            }
+        },
         add_item: function (page, text) {
             var item_index = get_next_item_index(page);
             set_item(page, item_index, text, NORMAL);
@@ -95,4 +105,34 @@ var stored = (function () {
         }
     };
 
+}());
+
+var stored_test = (function () {
+    "use strict";
+
+    var setup = function () {
+        localStorage.clear();
+        stored.init();
+        stored.add_item(0, "First");
+        stored.add_item(0, "Second");
+        stored.scratchItem("p0i1");
+    };
+
+
+    return {
+        assert: function (outcome, description) {
+            var li = document.createElement('li');
+            li.className = outcome ? 'pass' : 'fail';
+            li.appendChild(document.createTextNode(description));
+            document.getElementById("output").appendChild(li);
+        },
+
+        run: function () {
+            setup();
+            this.assert(localStorage.length === 12, "Setup and inserts are correct");
+            this.assert(localStorage.p0c === "5", "Item count is correct");
+            this.assert(localStorage.p0i1s === "s", "Scratched worked");
+            console.log("[TEST] Length: " + localStorage.length);
+        }
+    };
 }());

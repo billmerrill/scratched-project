@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>test</title>
+    <style type="text/css">
+        .pass:before {
+            content: 'PASS: ';
+            color:  green;
+        }
+
+        .fail:before {
+            content: 'FAIL: ';
+            color: red;
+        }
+    </style>
+    <script src="stored.js" type="text/javascript" charset="utf-8"></script>
+</head>
+
+<body>
+    <ul id="output"></ul>
+    <script type="text/javascript">
+        stored_test.run();
+    </script>
+</body>
+</html>
