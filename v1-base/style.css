@@ -20,7 +20,7 @@ li {
     font-size: 24px;
     background-color: #eee;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 #plus {
@@ -52,7 +52,7 @@ li {
 #inputs button {
     background-color: #eee;
     font-weight: bold;
-    color: white;
+    color: black;
 }
 
 #cancel_button, #delete_button {
@@ -79,7 +79,7 @@ li {
 #save_button {
     height: 44px;
     width: 300px;
-    font-size: 24px;
+    font-size: 14px;
     margin-top: 10px;
 }
 
