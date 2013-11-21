@@ -18,7 +18,7 @@ li {
     height: 44px;
     width: 300px;
     font-size: 24px;
-    background-color: #ccc;
+    background-color: #eee;
     font-weight: bold;
     color: white;
 }
@@ -50,7 +50,7 @@ li {
 }
 
 #inputs button {
-    background-color: #ccc;
+    background-color: #eee;
     font-weight: bold;
     color: white;
 }

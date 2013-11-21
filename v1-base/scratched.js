@@ -1,4 +1,4 @@
-/*jslint browser: true*/
+/*jslint browser: true, plusplus: true*/
 
 /**
     XXX: li.textContent will fail with ie8 and below
@@ -8,6 +8,24 @@ var scratched = (function () {
     "use strict";
 
     var input_page, input_box, the_list, current_item, delete_button,
+
+        /* view */
+
+        empty_list = function () {
+            var i;
+            for (i = 0; i < the_list.length; i++) {
+                the_list.removeChild(children[0]);
+            }
+        },
+
+        refresh_list_view = function () {
+            var page, i;
+            empty_list();
+            page = stored.get_page(0);
+            for (i = 0; i < page.length; i++) {
+                insert_list_item(page[i]['text']);
+            }
+        },
 
         /* model */
 
@@ -114,6 +132,9 @@ var scratched = (function () {
             delete_button.addEventListener("click", delete_item);
             the_list.addEventListener("click", select_item);
             touched.add_swipe_listener(the_list, swipe_item_left, swipe_item_right);
+
+            // start display
+            refresh_list_view();
         }
     };
 }());

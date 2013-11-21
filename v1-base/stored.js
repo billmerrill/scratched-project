@@ -58,9 +58,12 @@ var stored = (function () {
                 store.setItem("pc", "1");
                 store.setItem("p0c", "0");
 
-                this.add_item(0, "Apples");
-                this.add_item(0, "Bananas");
-                this.add_item(0, "More Items!");
+                this.add_item(0, "Scratch List");
+                this.add_item(0, "Swipe right to scratch out");
+                this.add_item(0, "Swipe left to undo that");
+                this.add_item(0, "Tap to edit or delete");
+                this.add_item(0, "Big + button to add items");
+
             }
         },
         add_item: function (page, text) {
