@@ -63,7 +63,7 @@ var stored = (function () {
                 this.add_item(0, "Swipe left to undo that");
                 this.add_item(0, "Tap to edit or delete");
                 this.add_item(0, "Big + button to add items");
-                this.add_item(0, "Your list on your phone not the server!")
+                this.add_item(0, "Your list on your phone not the server!");
 
             }
         },
