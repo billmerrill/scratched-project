@@ -14,7 +14,7 @@ var scratched = (function () {
         empty_list = function () {
             var i;
             for (i = 0; i < the_list.length; i++) {
-                the_list.removeChild(children[0]);
+                the_list.removeChild(the_list.children[0]);
             }
         },
 
